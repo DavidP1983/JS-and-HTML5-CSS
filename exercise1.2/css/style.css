@@ -1,0 +1,67 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #AD842B;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+div#box{
+  background-color: #78764A;
+  width: 600px;
+  padding: 25px;
+  box-sizing: border-box;
+  margin: 20px auto;
+
+
+}
+
+#write{
+  background-color: #78764A;
+
+}
+
+header{
+
+  border-bottom: 2px  solid red;
+  border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  text-align: center;
+  margin-left: auto;
+margin-right: auto;
+}
+
+header h1{
+
+
+  font-size: 40px;
+  color: white;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: bold;
+  text-shadow: 2px 2px red;
+}
+
+header h2{
+  font-size: 30px;
+  color: white;
+  text-transform: capitalize;
+  font-style: italic;
+  font-weight: bold;
+}
+
+ul{
+  padding: inherit;
+}
+
+input{
+  width: 100px;
+  box-sizing: border-box;
+padding: 10px;
+margin: 10px;
+
+}

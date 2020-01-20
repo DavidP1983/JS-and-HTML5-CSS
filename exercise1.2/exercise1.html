@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="box">
+
+
+    <header>
+      <h1>Concordia Continuing Education </h1>
+      <h2> Diploma in Web Programming</h2>
+    </header>
+
+    <!-- <ul>
+    <li>Intro to Programming with Java</li><br>
+    <li>Intro to SQL</li><br>
+    <li>HTML5 and CSS</li><br>
+    <li>JavaScript</li><br><br>
+  </ul> -->
+  <script>
+  function sayHello(){
+      document.write("<strong>hello</strong>");
+
+    }
+    function calculate(a,b){
+      return a+b;
+    }
+
+    sayHello();
+      document.write("<br>Total courses are " + calculate(2,2));
+
+  function courses1(){
+
+    document.write("<ul>");
+    document.write("<h1> Semester1 </h1>");
+    document.write("<li>Intro to SQL - <strong>CEWP 215</strong></li><br>");
+    document.write("<li>HTML5 and CSS - <strong>CEWP 329</strong></li><br>");
+    document.write("</ul>");
+    document.write("<a href='exercise1.html'> Return to home page</a>");
+
+  }
+
+  function courses2(){
+    document.write("<ul>");
+    document.write("<h1> Semester2 </h1>");
+    document.write("<li>Intro to Programming with Java - <strong>CEJV 416</strong> </li><br>");
+    document.write("<li>JavaScript - <strong>CEWP 339</strong></li><br><br>")
+    document.write("</ul>");
+    document.write("<a href='exercise1.html'> Return to home page</a>");
+  }
+  </script>
+
+  <input title="Semester1"  value="Semester 1" onclick="courses1();">
+  <input title="Semester2"  value="Semester 2" onclick="courses2();"> 
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
