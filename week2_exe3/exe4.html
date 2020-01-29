@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>GPA Calculator</title>
+  </head>
+  <body>
+
+<h1>GPA Calculator</h1>
+
+<p>Grade 1:</p>
+<input type="text" id="g1"/>
+<!-- also can write like
+Grade 1:<br>
+ <input type="number" id="g1"/>-->
+<p>Grade 2:</p>
+<input type="text" id="g2" />
+<p>Grade 3:</p>
+<input type="text" id="g3"/>
+<p>Grade 4:</p>
+<input type="text" id="g4"/><br><br>
+<button type="button" name="button" onclick="Print();">Calculate</button>
+
+<h4>GPA is:</h4>
+<p id="demo"></p>
+
+
+
+<script>
+function Print(){
+  var grades = [];
+  grades[0] = document.getElementById("g1").value;
+   /*also we put the result in brackets like this   grades[0] = (document.getElementById("g1").value); */
+  grades[1] = document.getElementById("g2").value;
+  grades[2] = document.getElementById("g3").value;
+  grades[3] = document.getElementById("g4").value;
+  let result = grades[0]/4 +grades[1]/4+grades[2]/4+grades[3]/4;
+  // result = parseInt(result);
+  document.getElementById("demo").innerHTML = result;
+}
+
+</script>
+
+  </body>
+</html>

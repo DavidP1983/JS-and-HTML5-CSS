@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Temperature Converter</title>
+</head>
+<body>
+
+  <h1>Temperature Convertor</h1>
+<br>
+<br>
+
+  <form>
+    <fieldset>
+      <legend>Fahrenheit(°F) to Celsius(°C)converter</legend><br>
+      Enter temp in °F: <input type="text" id="F"/><br>
+    </fieldset>
+  </form>
+
+  <form>
+    <fieldset>
+      <button type="button" name="Convert" onclick="Print();">Convert to °C </button> <br>
+    </fieldset>
+  </form>
+
+  <form>
+    <fieldset>
+      Temp in °C: <input type="text"  id="C" value=" "><br>
+    </fieldset>
+  </form>
+
+
+<script>
+function Print(){
+  var f = document.getElementById("F").value;
+  f = parseFloat(f);
+
+  let c = (f-32)/(9/5);
+  c = parseFloat(c);
+  document.getElementById("C").value = Math.round(c);
+   /* or just c */
+   /* i took value from above   Temp in °C: <input type="text"  id="C" value=" "> */
+}
+
+</script>
+
+
+</body>
+</html>

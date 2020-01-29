@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Registration</title>
+  </head>
+  <body>
+
+<h1>Registration Form</h1>
+
+First Name:<br>
+<input type="text" id="fn"/>
+<br>
+Middle Name:<br>
+<input type="text" id="mn"/>
+<br>
+Last Name:<br>
+<input type="text" id="ln"/>
+<br>
+<br>
+<button type="button" name="Show" onclick="Print();">Show</button>
+
+
+<script>
+function Print(){
+  var fullName = [];
+  fullName[0] = (document.getElementById("fn").value);
+  fullName[1] = (document.getElementById("mn").value);
+  fullName[2] = (document.getElementById("ln").value);
+  let result = (fullName[0]+" "+fullName[1]+" "+fullName[2]);
+   document.getElementById("demo").innerHTML = result;
+}
+
+
+</script>
+
+<h4>Full name is:</h4>
+<p id="demo"></p>
+
+  </body>
+</html>

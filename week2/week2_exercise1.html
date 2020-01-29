@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise1</title>
+  <link rel="stylesheet" href="css/style1.css">
+</head>
+<body >
+
+
+<div id="box">
+
+
+
+
+  <h1>This is JS Program</h1>
+<br>
+<br>
+  <input type="text" id="firstName"/>
+  <button type="buttom"  onclick="Text();">Display</button>
+
+
+
+  <script>
+
+  function Text(){
+
+    var x = document.getElementById("firstName").value;
+    document.getElementById("demo").innerHTML = x;
+    if(x==""||x==null){
+      alert("Name must be filled out");
+      return false;
+    }
+
+    
+    let y = document.getElementById("demo");
+    y.style.color = "blue";
+    // document.getElementById('demo').innerHTML=document.getElementById('firstName').value;
+
+  }
+
+
+
+  </script>
+<br>
+<br>
+  <p id="demo"></p>
+
+</div>
+
+</body>
+</html>

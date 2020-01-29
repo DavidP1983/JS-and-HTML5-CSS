@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Guess</title>
+</head>
+<body>
+
+  <h1>Guessing a number Between 0 and 100</h1>
+  Your number:<br>
+  <input type="number" id="g"/>
+  <br>
+  <br>
+  <button type="button" name="Guess" onclick="Print();">Guess</button>
+
+  <h4>Result:</h4>
+  <p id="demo"></p>
+
+
+  <script>
+  var random = Math.floor(Math.random()*5);
+  /*also you can write a method like this*/
+  //  var number = parseInt(Math.random() * 101);
+
+
+  function Print(){
+
+    let number = document.getElementById("g").value;
+    if(number==""){
+      alert("Enter your number");
+      return false
+    }
+
+
+
+    var txt;
+
+    if(number==random){
+      txt="Bravo!:)";
+      var finish = document.getElementById("demo");
+      finish.style.color = "black";
+
+
+    }
+    if(number<random){
+      txt = "Guess Higher";
+      var higher = document.getElementById("demo");
+      higher.style.color = "red";
+
+    }
+    if(number>random){
+      txt = "Guess Lower";
+      var lower = document.getElementById("demo");
+      lower.style.color = "blue";
+
+    }
+
+    document.getElementById("demo").innerHTML = txt;
+
+  }
+</script>
+
+</body>
+</html>

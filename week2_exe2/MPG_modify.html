@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The calculate MPG_modify Application </title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+<div id="style">
+
+
+<h1>Thanks for using MPG Application</h1>
+<br>
+<p>Miles Driven:</p>
+<input type="text"  id="Miles"/>
+<br>
+<br>
+<p>Callons of Gas:</p>
+<input type="text" id="Gas"/>
+<br>
+<br>
+<button type="button" name="Display" onclick="Print();">Display</button>
+
+<script>
+function Print(){
+  var miles = document.getElementById("Miles").value;
+  miles = parseFloat(miles);
+  let gallons = document.getElementById("Gas").value;
+  var mpg  = miles/gallons;
+  mpg = parseInt(mpg);
+  document.getElementById("demo").innerHTML = mpg;
+  if(miles==""||gallons==""){
+    alert("All Fills must be filled out")
+    return false;
+  }
+
+}
+
+</script>
+
+<p id="demo"></p>
+
+</div>
+
+
+  </body>
+</html>
