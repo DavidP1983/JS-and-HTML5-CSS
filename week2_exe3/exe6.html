@@ -26,6 +26,7 @@
   function Print(){
 
     let number = document.getElementById("g").value;
+
     if(number==""){
       alert("Enter your number");
       return false
@@ -33,10 +34,11 @@
 
 
 
+
     var txt;
 
     if(number==random){
-      txt="Bravo!:)";
+      txt="Bravo!:)"+ " "+ "the random number was" +" "+ random ;
       var finish = document.getElementById("demo");
       finish.style.color = "black";
 
@@ -56,8 +58,10 @@
     }
 
     document.getElementById("demo").innerHTML = txt;
+    document.getElementById("g").value = "";
 
   }
+
 </script>
 
 </body>
