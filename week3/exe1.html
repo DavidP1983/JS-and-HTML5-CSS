@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Loop Exercise</title>
+  </head>
+  <body>
+
+<h1>Array - Loop Exercise</h1>
+Number of elements in your Array:<br>
+<input type="number" id="g"/>
+<br>
+<br>
+<button type="button" name="Create" onclick="Create();">Create</button>
+<button type="button" name="Average" onclick="Average();">Average</button>
+<button type="button" name="Maximum" onclick="Max();">Maximum</button>
+<button type="button" name="Minimum" onclick="Min();">Minimum</button>
+
+<p id="cr"></p>
+<p id="ave"></p>
+<p id="max"></p>
+<p id="min"></p>
+<script>
+
+var array=[];
+
+function Create(){
+
+var input = (document.getElementById("g").value);
+
+// adding elements to our empty array
+for(var i = 0; i<input; i++){
+  /* var array = [];
+array[0] = 12;
+array[1] = 13;
+array[2] = 46;*/
+  array[i]=parseInt(Math.random()*100);
+
+  }
+document.getElementById("cr").innerHTML = "The array is:" +" "+ array;
+document.getElementById("g").value = " ";
+}
+
+
+function Average(){
+
+let ln = array.length;
+var result = 0;
+for(var i = 0; i<ln; i++){
+  result+= array[i];
+ }
+ var ave = result/ln;
+ document.getElementById("ave").innerHTML = "Average is:" +" "+ ave;
+
+}
+
+function Max(){
+  var max = array[0];
+  let ln = array.length;
+  for(var i = 1; i<ln; i++){
+    if(max<array[i]){
+      max=array[i];
+    }
+  }
+  document.getElementById("max").innerHTML = "Max is:" +" "+ max;
+}
+
+
+function Min(){
+/* i can omit all the expretion below to use only one statement*/
+
+  // var min = array[0];
+  // let ln = array.length;
+  // var i = 1;
+  // for(; i<ln; ){
+  //   if(min>array[i]){
+  //     min=array[i];
+  //   }
+  //   i++;
+  document.getElementById("min").innerHTML = "Min is:" +" "+Math.min(...array);
+  }
+  // document.getElementById("min").innerHTML = "Min is:" +" "+Math.min(array);
+// }
+
+
+
+
+</script>
+
+  </body>
+</html>

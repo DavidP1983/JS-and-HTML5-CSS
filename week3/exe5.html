@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hotel Reservation</title>
+  </head>
+  <body>
+    <h1>Travel Worthy</h1>
+
+    <h4>Hotel availability</h4>
+
+    <button type="button" name="Info" onclick="GetInfo();">Get Info</button><br/>
+    <br>
+    <button type="button" name="reserve" onclick="Reserve();">Reserve</button><br>
+    <br>
+    <button type="button" name="cancel" onclick="Cancel();">Cancel</button>
+    <p id="data"></p>
+    <p id="data2"></p>
+    <p id="data3"></p>
+
+    <script>
+
+    var hotel = {
+      name: "Hilton",
+      rooms: 30,
+      booked: 25,
+      gym: true,
+      roomsType: ["twin","double","suite"],
+      checkAvailability: function(){
+        return this.rooms - this.booked;
+      },
+      makeBooking: function(){
+        return this.booked++;
+
+      },
+      cancelBooking: function(){
+        return this.booked--;
+      }
+
+    };
+function GetInfo(){
+    document.getElementById("data").innerHTML = "Name:" + " " + hotel.name;
+    document.getElementById("data2").innerHTML = "Availability:" + " " + hotel.checkAvailability();
+    document.getElementById("data3").innerHTML = "Number of rooms:" + " " + hotel.rooms;
+}
+
+function Reserve(){
+  alert("reservation is made");
+  if(hotel.checkAvailability()==0){
+    alert("Sorry we are full")
+    document.getElementById("data3").innerHTML = "There are no empty rooms";
+return false;
+  }
+  document.getElementById("data").innerHTML = "Booked:" + " " + hotel.makeBooking();
+  document.getElementById("data2").innerHTML = "Availability:" + " " + hotel.checkAvailability();
+    }
+
+function Cancel(){
+  alert("cancellation is made");
+
+  document.getElementById("data").innerHTML = "Booked:" + " " + hotel.cancelBooking();
+  document.getElementById("data2").innerHTML = "Availability:" + " " + hotel.checkAvailability();
+  document.getElementById("data3").innerHTML = "";
+
+}
+    </script>
+
+
+  </body>
+</html>

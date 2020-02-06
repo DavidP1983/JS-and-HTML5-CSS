@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Person Info</title>
+  </head>
+  <body>
+
+    <h1>Person Information</h1>
+
+<p id="demo"></p>
+
+<script>
+var myInfo = {
+  fn: "David",
+  mn: "Robert",
+  ln: "Piruzahvili",
+  yearOfBirth: 1983,
+  date: new Date(),
+  realAge: function(){
+    return this.date.getFullYear() - this.yearOfBirth;
+  }
+};
+document.getElementById("demo").innerHTML ="First Name:" + " "+myInfo.fn+
+ "<br/>"+"Middle Name:"+" "+myInfo.mn+"<br/>"+"Last Name:"+" "+myInfo.ln+"<br/>"+"Age:"+" " +  myInfo.realAge();
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>GPA Calculator</title>
+  </head>
+  <body>
+
+<h1>GPA Calculator</h1>
+Grades:<br>
+<input type="number" id="g"/>
+<br>
+<br>
+<button type="button" name="Enter" onclick="Enter();">Enter</button>
+<button type="button" name="Calculate" onclick="Calculate();">Calculate</button>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+
+<script>
+
+var array = [];
+var count = 0;
+
+function Enter(){
+
+array[count] = parseFloat(document.getElementById("g").value);
+// parseFloat/parseInt  required any time parseFloat(document.getElementById("g").value);
+alert(array[count] + " "+ "was etred");
+document.getElementById("demo").innerHTML = "Grades are: " + " " + array;
+count++;
+
+    document.getElementById("g").value = " ";
+
+}
+
+function Calculate(){
+
+let ln = array.length;
+  var result = 0;
+  var i = 0;
+  while(i<ln) {
+    result+= array[i];
+    i++;
+  }
+
+  var gpa = result/ln;
+  document.getElementById("demo2").innerHTML= "GPA for" + " " + array + " " + "is:" + " " + gpa;
+
+}
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Many Objects</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+<h1>Travel Worthy & Person Information</h1>
+
+
+<button type="button" name="Hotel1" onclick="GetInfo1();">Marriott</button>
+<button  type="button" name="Hotel2" onclick="GetInfo2();">Hilton</button>
+<button  type="button" name="Person1" onclick="Person1();">Person1</button>
+<button  type="button" name="Person2" onclick="Person2();">Person2</button>
+
+
+
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+
+<script>
+
+function Hotel(name,rooms,booked) {
+  this.name = name;
+  this.rooms = rooms;
+  this.booked = booked;
+  this.checkAvailability = function(){
+    return this.rooms - this.booked;
+  }
+
+};
+
+var hotel1 = new Hotel("Marriott", 120, 77);
+var hotel2 = new Hotel("Hilton", 40, 25);
+
+function GetInfo1(){
+
+  document.getElementById("demo").innerHTML = "Name:" + " " + hotel1.name;
+  document.getElementById("demo2").innerHTML = "Availability:" + " " + hotel1.checkAvailability();
+  document.getElementById("demo3").innerHTML = "Number of rooms:" + " " + hotel1.rooms;
+  document.getElementById("demo4").innerHTML = "";
+}
+function GetInfo2(){
+
+  document.getElementById("demo").innerHTML = "Name:" + " " + hotel2.name;
+  document.getElementById("demo2").innerHTML = "Availability:" + " " + hotel2.checkAvailability();
+  document.getElementById("demo3").innerHTML = "Number of rooms:" + " " + hotel2.rooms;
+  document.getElementById("demo4").innerHTML = "";
+
+}
+
+function Person(firstName,middleName,lastName,yearOfBirth,date) {
+  this.firstName = firstName;
+  this.middleName = middleName;
+  this.lastName = lastName;
+  this.yearOfBirth = yearOfBirth;
+  this.date = new Date();
+  this.realAge = function(){
+    return this.date.getFullYear() - this.yearOfBirth;
+  }
+
+};
+
+var person1 = new Person("David","Robert","Piruzashvili",1983);
+var person2 = new Person("Jonh","-","Smith",1967);
+
+function Person1(){
+
+  document.getElementById("demo").innerHTML = "First Name:" + " " + person1.firstName;
+  document.getElementById("demo2").innerHTML = "Middle Name:" + " " + person1.middleName;
+  document.getElementById("demo3").innerHTML = "Last Name:" + " " + person1.lastName;
+  document.getElementById("demo4").innerHTML = "Age:" + " " + person1.realAge();
+}
+
+function Person2(){
+
+  document.getElementById("demo").innerHTML = "First Name:" + " " + person2.firstName;
+  document.getElementById("demo2").innerHTML = "Middle Name:" + " " + person2.middleName;
+  document.getElementById("demo3").innerHTML = "Last Name:" + " " + person2.lastName;
+  document.getElementById("demo4").innerHTML = "Age:" + " " + person2.realAge();
+}
+
+</script>
+
+  </body>
+</html>

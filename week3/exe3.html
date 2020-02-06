@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Creating Object</title>
+  </head>
+  <body>
+
+<h1>Travel Worthy</h1>
+
+<h4>Hotel availability</h4>
+
+<p id="data"></p>
+<p id="data2"></p>
+<p id="data3"></p>
+
+<script>
+
+var hotel = {
+  name: "Hilton",
+  rooms: 40,
+  booked: 25,
+  gym: true,
+  roomsType: ["twin","double","suite"],
+  checkAvailability: function(){
+    return this.rooms - this.booked;
+
+  }
+};
+/* updating objects
+var name = hotel.name;
+name = "Marriott";*/
+
+document.getElementById("data").innerHTML = "Name:" + " " + hotel.name;/*or just name from the comment*/
+document.getElementById("data2").innerHTML = "Availability:" + " " + hotel.checkAvailability();
+document.getElementById("data3").innerHTML = "Number of rooms:" + " " + hotel.rooms;
+
+</script>
+
+  </body>
+</html>
