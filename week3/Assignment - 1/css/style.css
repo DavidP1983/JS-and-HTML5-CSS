@@ -1,0 +1,70 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+
+header{
+  text-align: center;
+  /* border: 1px solid red; */
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color:#FFFB53;
+  color: #FF1D15;
+  text-shadow: 1px 1px black;
+}
+
+section{
+  position: relative;
+  /* width: 50%; */
+}
+section#sec1{
+  text-align: left;
+  /* border: 1px solid red; */
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background: url(../image/ham.jpg)no-repeat center;
+  background-size: cover;
+  color: #FFFEE3;
+  /* font-weight: 80px; */
+  font-size: 20px;
+  text-shadow: 1px 1px black;
+
+}
+section#sec1 h1{
+  font-size: 30px;
+  text-decoration: underline;
+  color: white;
+}
+
+section#sec1 button{
+  padding: 5px;
+  width: 100px;
+}
+
+#sec2{
+  position: absolute;
+  left: 800px;
+  bottom: 250px;
+  color: white;
+  font-size: 20px;
+  box-sizing: border-box;
+
+}
+
+#sec2 td,th{
+
+  text-align: right;
+}
+
+#demo{
+  text-align: center;
+  color: yellow;
+}
+#footer{
+  font-size: 15px;
+}
