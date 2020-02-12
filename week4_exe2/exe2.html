@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Dom Queries</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <ul>
+    <li id="one" class="hot">fresh figs</li>
+    <li id="two" class="hot">pine nuts</li>
+    <li id="three" class="hot">honey</li>
+    <li id="four" class="cool">balsamic</li>
+  </ul>
+  <button type="button" name="button" onclick="Try();">Try it</button>
+  <p id="demo"></p>
+
+  <script>
+
+  function Try(){
+    var elements, ln;
+    elements = document.querySelectorAll("li.hot");
+
+    ln = elements.length;
+    if(ln > 0){
+      // var firstItem = elements[0];
+      // alert(firstItem);
+      //  check If it contains items
+
+      for(var i=0; i<ln; i++){
+        // loop through each item
+        elements[i].className="cool"; /*Change value of class attribute*/
+      }
+    }
+
+
+  }
+
+</script>
+
+</body>
+</html>

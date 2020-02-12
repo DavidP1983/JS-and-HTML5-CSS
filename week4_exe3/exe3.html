@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Dom Queries</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <ul>
+    <li id="one" class="hot">fresh figs</li>
+    <li id="two" class="hot">pine nuts</li>
+    <li id="three" class="hot">honey</li>
+    <li id="four" class="cool">balsamic</li>
+  </ul>
+  <button type="button" name="button" onclick="Try();">Try it</button>
+  <p id="demo"></p>
+
+  <script>
+
+  function Try(){
+    var startEl;
+    startEl = document.getElementById("two"); /*Select the starting point and find its siblings.*/
+// var prevEl = startEl.previousSibling.previousSibling;
+// var nextEl = startEl.nextSibling.nextSibling;
+//or
+  var prevEl = startEl.previousElementSibling;
+  var nextEl = startEl.nextElementSibling;
+
+
+//Change the values of the siblings' class
+// prevEl.className = "cool";
+// nextEl.className = "cool";
+
+
+//Change the values of the siblings'(class attributes)
+  prevEl.setAttribute("class","cool");
+  nextEl.setAttribute("class", "cool");
+}
+
+</script>
+
+</body>
+</html>
