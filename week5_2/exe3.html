@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Add&Remove elements</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1>Adding and Removing an Elements</h1>
+  <h2>Dom Tree</h2>
+
+  <ul>
+    <li id="one" class="hot">fresh figs</li>
+    <li id="two" class="cool">pine nuts</li>
+    <li id="three" class="hot">honey</li>
+    <li id="four" class="cool">balsamic</li>
+  </ul>
+  new items:
+  <input type="text" id="item"/>
+  <br>
+  <br>
+  <button type="button" name="button" onclick="Add();">Add</button>
+
+  <button type="button" name="button" onclick="Remove();">Remove</button>
+
+<p id="demo"></p>
+  <script>
+
+    var array= [];
+    var count= 0;
+
+    function Add(){
+
+      array[count] = (document.getElementById("item").value);
+      document.getElementById("demo").innerHTML ="Added products:"+" " + array;
+      count++;
+
+     let input = document.getElementById("item").value;
+      document.getElementById("item").value = " ";
+      var parent = document.getElementsByTagName("ul")[0];
+      var addElement = document.createElement("li");
+      var addText = document.createTextNode(input);
+      addElement.appendChild(addText);
+      addElement.setAttribute("class","cool");
+
+      parent.appendChild(addElement);
+    }
+
+    function Remove(){
+
+
+      var parent = document.getElementsByTagName("ul")[0];
+      var child = document.getElementsByTagName("li");
+
+      if(child.length > 0){
+        var ln = child[child.length-1];
+        parent.removeChild(ln);
+      }
+      array[count] = (document.getElementById("item").value);
+      document.getElementById("demo").innerHTML ="Added products:"+" " + array;
+      count--;
+    }
+
+  </script>
+
+</body>
+</html>

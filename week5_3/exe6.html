@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Event Listeners</title>
+</head>
+<body>
+  <center>
+    <h1>Parameners with even Listeners</h1>
+
+    <form id="myform">
+      Create a Username:<br><input type="text" id="username"/><br>
+      <p id="demo"></p>
+
+      Create a Password: <br><input type="password"  id="password"/><br>
+      <p id="demo1"></p>
+
+      <input type="submit" value="Submit"/>
+    </form>
+
+    <script>
+
+      var firstEl = document.getElementById("demo");
+      var secondEl = document.getElementById("demo1");
+
+      function checkLength(event,minLength){
+
+        var target = event.target;
+        target = (document.getElementById("username").value);
+
+        if(target.length < minLength){
+          firstEl.textContent = "Username must be" +" "+ minLength +" "+ "characters or more";
+        }else{
+          firstEl.innerHTML = "";
+        }
+
+
+
+
+      var  t = event.target;
+
+        t = (document.getElementById("password").value);
+console.log(t);
+
+
+        if(t.length < minLength){
+          console.log(t);
+          secondEl.textContent = "Password must be" +" "+ minLength +" "+ "characters or more";
+        }else{
+          secondEl.innerHTML = "";
+        }
+      }
+
+
+      // var elUserName = document.getElementById("username");
+      // let elPassword = document.getElementById("password");
+      var form = document.getElementById("myform")[0];
+      // form.addEventListener("blur", function(e){
+      //   checkLength(6);
+      //  });)
+
+
+      form.addEventListener("blur", function(){
+        checkLength(event,6);
+      });
+      // elPassword.addEventListener("blur",checkLength,false);
+    </script>
+  </center>
+</body>
+</html>

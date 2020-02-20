@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>NodeList</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <ul>
+    <li id="one" class="hot">fresh figs</li>
+    <li id="two" class="cool">pine nuts</li>
+    <li id="three" class="hot">honey</li>
+    <li id="four" class="cool">balsamic</li>
+  </ul>
+  <button type="button" name="button" onclick="Print();">Try it</button>
+
+  <script>
+    function Print(){
+    var parent = document.getElementsByTagName("ul")[0];
+    var firstEl = parent.firstElementChild;
+    var lastEl = parent.lastElementChild;
+
+    firstEl.setAttribute("class","cool");
+    lastEl.setAttribute("class","hot");
+    // or
+    // instead of writting  var parent = document.getElementsByTagName("ul")[0],we gonna change it to ->
+    // var firstEl = parent[0].firstChild.nextSibling;
+    // var lastEl = parent[0].lastChild.previousSibling;
+    //
+    // firstEl.className = "cool";
+    // lastEl.className = "hot";
+  }
+  </script>
+
+
+
+</body>
+</html>
