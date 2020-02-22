@@ -5,65 +5,93 @@
   <title>Event Listeners</title>
 </head>
 <body>
+  <style>
+    input[type=text] {
+
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+    }
+    input[type=password] {
+
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+    }
+
+    input[type=text]:focus {
+      border: 3px solid #555;
+      background-color: yellow;
+    }
+    input[type=password]:focus {
+      border: 3px solid #555;
+      background-color: yellow;
+    }
+  </style>
+
   <center>
     <h1>Parameners with even Listeners</h1>
 
-    <form id="myform">
-      Create a Username:<br><input type="text" id="username"/><br>
-      <p id="demo"></p>
 
-      Create a Password: <br><input type="password"  id="password"/><br>
-      <p id="demo1"></p>
+    <label for="username">Create a Username:</label>
+    <input type="text" id="username"/>
+    <p id="demo"></p>
 
-      <input type="submit" value="Submit"/>
-    </form>
+    <label for="password">Create a Password:</label>
+    <input type="password"  id="password"/>
+    <p id="demo1"></p>
+
+    <input type="submit" value="Submit"/>
+
 
     <script>
-
+      // Elements to output warning message.
       var firstEl = document.getElementById("demo");
       var secondEl = document.getElementById("demo1");
 
       function checkLength(event,minLength){
+        var p = document.getElementsByTagName("p");
+        var i;
+        for(i = 0; i< p.length; i++){
+          p[i].style.color = "red";
+        }
 
-        var target = event.target;
-        target = (document.getElementById("username").value);
+        var target = event.target||event.srcElement;
+        var firstEl = target.nextSibling.nextSibling;
 
-        if(target.length < minLength){
+        // Condition to set warning message if username value less then minLength.
+        if(target.value.length < minLength){
           firstEl.textContent = "Username must be" +" "+ minLength +" "+ "characters or more";
         }else{
-          firstEl.innerHTML = "";
+          firstEl.textContent = "";
         }
 
-
-
-
-      var  t = event.target;
-
-        t = (document.getElementById("password").value);
-console.log(t);
-
-
-        if(t.length < minLength){
-          console.log(t);
-          secondEl.textContent = "Password must be" +" "+ minLength +" "+ "characters or more";
+        var secondEl = target.nextSibling.nextSibling;
+        // Condition to set warning message if password value less then minLength.
+        if(target.value.length < minLength){
+          firstEl.textContent = "Password must be" +" "+ minLength +" "+ "characters or more";
         }else{
-          secondEl.innerHTML = "";
+          firstEl.textContent = "";
         }
+
       }
 
 
-      // var elUserName = document.getElementById("username");
-      // let elPassword = document.getElementById("password");
-      var form = document.getElementById("myform")[0];
-      // form.addEventListener("blur", function(e){
-      //   checkLength(6);
-      //  });)
+      // Variables to access usr and psw values.
+      var elUserName = document.getElementById("username");
+      let elPassword = document.getElementById("password");
 
-
-      form.addEventListener("blur", function(){
+      elUserName.addEventListener("blur", function(event){
         checkLength(event,6);
       });
-      // elPassword.addEventListener("blur",checkLength,false);
+      elPassword.addEventListener("blur", function(event){
+        checkLength(event,5);
+      });
+
     </script>
   </center>
 </body>
