@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document Object Model - Get Elements</title>
+</head>
+<body>
+  <div id="page">
+    <h1 id="header">List King</h1>
+    <h2>Buy groceries</h2>
+    <ul>
+      <li id="one" class="hot">fresh figs</li>
+      <li id="two" class="hot">pine nuts</li>
+      <li id="three" class="hot">honey</li>
+      <li id="four" class="cool">balsamic vinegar</li></ul>
+    </div>
+    <!-- <button onclick="myFunction();">Try it</button> -->
+    <button id="myFunction">Try it</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+
+  //   function myFunction(){
+  //   var $item = $("#one").hide();
+  // }  first variant with event handler
+
+  function remove(){
+    // $("#one").hide(); // hide the first element
+    // $("li.hot").hide(); hide all li.hot elements
+    $("li.hot:first-child").hide(); //also hide the first element
+  }
+  var item = document.getElementById("myFunction");
+  item.addEventListener("click",remove,false);
+</script>
+
+
+</body>
+</html>

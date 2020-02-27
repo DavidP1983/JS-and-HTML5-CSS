@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Events - Event Delegation</title>
+  <link rel="stylesheet" href="css/c05.css">
+
+</head>
+<body onmousemove="myFunction(event)">
+
+  <div id="page">
+    <h1>List King</h1>
+    <h2>Buy groceries</h2>
+
+    <ul id="shoppingList">
+      <li class="complete"><a href="itemDone.php?id=1">fresh figs</a></li>
+      <li class="complete"><a href="itemDone.php?id=2">pine nuts</a></li>
+      <li class="complete"><a href="itemDone.php?id=3">honey</a></li>
+      <li class="complete"><a href="itemDone.php?id=4">balsamic vinegar</a></li>
+    </ul>
+  </div>
+
+  <p id="demo"></p>
+
+  <script>
+    function myFunction(event){
+    var x= event.target.nodeName;
+    document.getElementById("demo").innerHTML = x;
+    }
+
+
+        function getTarget(event){
+          return event.target||event.srcElement;    // Get the target of event
+
+        }
+
+function remove(event){
+
+  var target = getTarget(event);   // Get the item clicked link
+  if(target.nodeName.toLowerCase()=="a"){  // If user clicked on an a element
+  var el_Li = target.parentNode;  // Get its li element
+  var el_Ul = el_Li.parentNode;    // Get the ul element
+  el_Ul.removeChild(el_Li);   // Remove el_Li from el_Ul
+  }
+
+  event.preventDefault();  // Prevent the link from taking you elsewhere
+
+}
+
+
+    var elRemove = document.getElementById("shoppingList");
+    elRemove.addEventListener("click",function(event){
+      remove(event);
+    });
+
+  </script>
+
+
+</body>
+</html>

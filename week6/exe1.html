@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Events - Event Delegation</title>
+  <link rel="stylesheet" href="css/c05.css">
+
+</head>
+<body onmousemove="myFunction(event)">
+
+  <div id="page">
+    <h1>List King</h1>
+    <h2>Buy groceries</h2>
+
+    <ul id="shoppingList">
+      <li class="complete"><a href="itemDone.php?id=1">fresh figs</a></li>
+      <li class="complete"><a href="itemDone.php?id=2">pine nuts</a></li>
+      <li class="complete"><a href="itemDone.php?id=3">honey</a></li>
+      <li class="complete"><a href="itemDone.php?id=4">balsamic vinegar</a></li>
+    </ul>
+  </div>
+
+<p id="demo"></p>
+
+  <script>
+
+function myFunction(event){
+var x= event.target.nodeName;
+document.getElementById("demo").innerHTML = x;
+}
+
+
+    function getTarget(event){
+      return event.target||event.srcElement;    // Get the target of event
+
+    }
+
+function removeEl(event){
+  var target = getTarget(event);  // Get the item clicked link
+  var el_Li = target.parentNode;
+  //Get the element that triggered a specific event,in this case it mins ->
+   // target.parentNode -> target(it's an element("a")) that triggered a specific event ("Click") and parentNode(it's an element("li"))
+   //,it's the same without addEventListener ->
+   //var child = document.getElementById("p1");
+   //child.parentNode.removeChild(child);
+  var el_Ul = el_Li.parentNode;
+  //follow- now it mins = clicked on elemet "a"."li"."ul";
+  el_Ul.removeChild(el_Li);
+
+  event.preventDefault(); //Prevent the link from taking you elsewhere
+}
+
+    var link = document.getElementById("shoppingList");
+    link.addEventListener("click",function(event){
+      removeEl(event);
+    });
+
+
+
+  </script>
+
+</body>
+</html>

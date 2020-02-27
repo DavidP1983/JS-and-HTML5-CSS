@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Event</title>
+    <link rel="stylesheet" href="css/c06.css">
+</head>
+<body>
+<center>
+  <div id="page">
+     <h1>List King</h1>
+
+
+       <label for="noteInput">Enter note:</label>
+       <input type="text" id="text" />
+       <h2 id="demo">Note</h2>
+
+   </div>
+
+
+  <script>
+    function setup(){
+      var textInput;
+      textInput = document.getElementById("text");
+      textInput.focus();
+    }
+
+    function myFunction(){
+     var text = this.value.toUpperCase();
+     document.getElementById("demo").textContent = text;
+  }
+
+    var input = document.getElementById("text");
+    input.addEventListener("keyup",myFunction,false);
+
+    window.addEventListener("load",setup,false);
+
+  </script>
+</center>
+</body>
+</html>
