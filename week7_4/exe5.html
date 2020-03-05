@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery FAQs</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <center>
+    <main id="page">
+
+
+      <h1>jQuery FAQs</h1>
+
+      <h3 id="demo">What is jQuery?</h3>
+      <div >
+        <p>jQuery is a library of the JavaScript functions that you're most likely to need as you develop websites.</p>
+      </div>
+
+      <h3>Why is jQuery becoming so popular?</h3>
+      <div >
+        <p>Three reasons:</p>
+        <ul>
+          <li>It's free.</li>
+          <li>It lets you get more done in less time.</li>
+          <li>All of its functions are cross-browser compatible.</li>
+        </ul>
+      </div>
+
+      <h3>Which is harder to learn: jQuery or JavaScript?</h3>
+      <div>
+        <p>For most functions, jQuery is significantly easier to learn and use than JavaScript. But remember that jQuery is JavaScript.</p>
+      </div>
+    </main>
+  </center>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("#page h3").click(function(){
+      $(this).toggleClass("active");
+
+      if($(this).attr("class")!=="active"){
+        $(this).next().slideUp(300);
+      }else{
+        $(this).next().slideDown(300);
+      }
+    });
+
+     $("h3:eq(0)").css("color","red");
+  });
+
+  // var x  = document.getElementById("demo");
+  // x.style.color = "red";
+
+
+
+  </script>
+
+</body>
+</html>

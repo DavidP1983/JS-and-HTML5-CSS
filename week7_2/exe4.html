@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JQ-Event</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div id="page">
+    <h1 id="header">List King</h1>
+    <h2>Buy groceries</h2>
+    <ul>
+      <li id="one" class="hot">fresh figs</li>
+      <li id="two" class="hot">pine nuts</li>
+      <li id="three" class="hot">honey</li>
+      <li id="four" class="cool">balsamic vinegar</li></ul>
+    </div>
+    <input type="text" id="input"/><br>
+    <br>
+    <button id="style">Css Change</button>
+    <button id="remove">Remove</button>
+    <button id="add">Add</button>
+    <p id="demo"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+
+      $("#style").on("click",function(){
+        $("li").css({
+          "color": "red",
+          "font-size": "+=12"
+        });
+      });
+
+      $("#remove").on("click",function(){
+        $("li:last-child").remove();
+      });
+
+      $("#add").on("click",function(){
+        var item = $("#input").val();
+        var $newEl = $("<li>"+item+"</li>");
+        $("li:last").after($newEl);
+        $newEl.addClass("cool");
+      // document.getElementById("input").value = " ";
+      $("#input").val("");
+      });
+
+
+
+    </script>
+
+
+
+  </body>
+  </html>

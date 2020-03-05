@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#page{
+  box-sizing: border-box;
+  border: 3px solid blue;
+  width: 600px;
+  
+}
+#flex {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+#flex > div {
+  width: 100px;
+ margin: 40px;
+ line-height: 100px;
+}
+img {
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+h1{
+  color: blue;
+}
+p{
+  font-size: 20px;
+  font-family: Verdana;
+}
+#demo{
+  color:blue;
+}
+#demo1{
+  border-radius:20px;
+  padding:8px;
+  width: 300px;
+
+}
