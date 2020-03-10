@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Tuxedo Cat Coffe</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Charm' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <img src="images/cat.png" alt="Tuxedo Cat Coffee"/>
+  </header>
+  <main>
+    <form id="order_form" name="order_form" action="index.html" method="get">
+      <section id="menu">
+        <h2>Menu</h2>
+        <p>Click an item to add it to your order.</p>
+        <ul>
+          <li><a href="#"><img id="espresso" src="images/espresso.png" alt="Espresso" data-value="1.95"/></a></li>
+          <li><a href="#"><img id="latte" src="images/latte.png"  alt="Latte" data-value="2.95"/></a></li>
+          <li><a href="#"><img id="cappuccino" src="images/cappuccino.png"  alt="Cappuccino" data-value="3.45"/></a></li>
+          <li><a href="#"><img id="coffe" src="images/coffe.png" alt="Coffee" data-value="1.75"/></a></li>
+          <li><a href="#"><img id="biscotti" src="images/biscotti.png"  alt="Biscotti" data-value="1.95"/></a></li>
+          <li><a href="#"><img id="scone" src="images/scone.png" alt="Scone" data-value="2.95"/></a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Your Order</h2>
+        <section>
+          <select id="order" name="order" size="6"></select>
+          <p id="total">&nbsp;</p>
+          <span id="discountMessage"></span>
+        </section>
+        <section id="buttons">
+          <input type="button" name="place_order" id="place_order" value="Place Order">
+          <input type="button" name="clear_order" id="clear_order" value="Clear Order">
+          <p id="demo"style="display:none;color:red;font-family:'Charm';font-size:22px;text-align:center;">Order 3 items get a discount </p>
+          <button type="button" name="button">Discount</button>
+        </section>
+      </section>
+    </form>
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var total = 0;
+      $("ul img").each(function(){
+
+        $("#espresso").hover(function(){
+          $(this).attr("src","hover/espresso_hover.png");
+        },function(){
+          $(this).attr("src","images/espresso.png");
+        });
+        $("#latte").hover(function(){
+          $(this).attr("src","hover/latte_hover.png");
+        },function(){
+          $(this).attr("src","images/latte.png");
+        });
+        $("#cappuccino").hover(function(){
+          $(this).attr("src","hover/cappuccino_hover.png");
+        },function(){
+          $(this).attr("src","images/cappuccino.png");
+        });
+        $("#coffe").hover(function(){
+          $(this).attr("src","hover/coffe_hover.png");
+        },function(){
+          $(this).attr("src","images/coffe.png");
+        });
+        $("#biscotti").hover(function(){
+          $(this).attr("src","hover/biscotti_hover.png");
+        },function(){
+          $(this).attr("src","images/biscotti.png");
+        });
+        $("#scone").hover(function(){
+          $(this).attr("src","hover/scone_hover.png");
+        },function(){
+          $(this).attr("src","images/scone.png");
+        });
+
+        $(this).click(function(event){
+          total = parseFloat(total);
+          var text_Item = $(this).attr("alt");
+          var elVal = $(this).attr("data-value");
+          var $newList = $('<option value="">'+"$"+elVal+" "+"-"+" "+text_Item+'</option>');
+          var elTotal = $("#order").append($newList);
+          var getVal = $(this).attr("data-value");
+          var setVal = $("select option").attr("value",getVal);
+
+          for(var i = 0;i<$newList.length; i++){
+            total+=parseFloat($newList[i].value);
+          }
+          if (setVal.length > 2) {
+            let discount = total / 100 * 5
+            // console.log('discount', discount);
+            // console.log('total', total);
+            total = total - discount;
+            // console.log('total', total);
+            document.getElementById('discountMessage').innerHTML =
+            `Discount of ${discount.toFixed(2) } applied to your order.`
+          }
+
+          let finalTotal=$("#total").text("Total: $" + total.toFixed(2));
+          event.preventDefault();
+        });
+        $("#place_order").focus();
+      });
+      $("#place_order").on("click",function(){
+        var x = $("#order option").val();
+
+        if(x==null||x==""){
+          alert("You have no items\n Please make your order!");
+        }else{
+          $("#order_form").submit();
+        }
+      });
+      $("#clear_order").on("click",function(){
+        $("#order option").remove();
+        $("#discountMessage").empty();
+        total = 0;
+        $("#total").empty().html("<p>&nbsp;</p>").val("total");
+
+      });
+      $("button").click(function(){
+        $("#demo").slideDown(300);
+      });
+      $("button").click(function(){
+        $("#demo").slideUp(5000);
+      });
+    });
+
+  </script>
+</body>
+</html>
