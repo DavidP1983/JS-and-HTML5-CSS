@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JQ</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div id="page">
+    <h1 id="header">List King</h1>
+    <h2>Buy groceries</h2>
+    <ul>
+      <li id="one" class="hot">fresh figs</li>
+      <li id="two" class="hot">pine nuts</li>
+      <li id="three" class="hot">honey</li>
+      <li id="four" class="cool">balsamic vinegar</li></ul>
+    </div>
+    <input type="text" id="input"/><br>
+    <br>
+    <button id="style">Css Change</button>
+    <button id="remove">Remove</button>
+    <button id="add">Add</button>
+    <p id="demo"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+
+function style(){
+  $("li").css({
+    "color": "red",
+    "font-size": "+=12"
+  });
+}
+
+function remove(){
+  $("li:last-child").remove();// can use just "last": $("li:last").remove();
+
+}
+
+function add(){
+  var item = $("#input").val();
+  var $newEl = $("<li>"+item+"</li>");
+  $("li:last").after($newEl);
+  $newEl.addClass("cool");
+  $newEl.attr("id","four");
+document.getElementById("input").value = " ";
+
+$("li").each(function() {
+var ids = this.id;
+$(this).append(" " + ids);
+});
+}
+
+
+
+      var elStyle = document.getElementById("style");
+      elStyle.addEventListener("click",style,false);
+
+      var elRemove = document.getElementById("remove");
+      elRemove.addEventListener("click",remove,false);
+
+      var elAdd = document.getElementById("add");
+      elAdd.addEventListener("click",add,false);
+
+    </script>
+
+
+
+
+  </body>
+  </html>

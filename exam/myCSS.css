@@ -1,0 +1,152 @@
+body {
+  background-color: #000;
+  font-family: 'Oswald', 'Futura', sans-serif;
+  margin: 0px;
+  padding: 0px;}
+
+#page {
+  background-color: #F0FFFF;
+  margin: 0px auto 0px auto;
+  position: relative;
+  text-align: center;}
+
+h1 {
+  background-position: center center;
+  text-align: center;
+  text-indent: -1000%;
+  height: 40px;
+  line-height: 75px;
+  width: 117px;
+  margin: 0px auto 0px auto;
+  padding: 30px 10px 20px 10px;}
+
+h2 {
+  color: #DC143C;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  display: inline-block;
+  margin: 0px 0px 23px 0px;}
+
+ul {
+  border:none;
+  padding: 0px;
+  margin: 0px;}
+
+li {
+  background-color:  #F8F8FF ;
+  color: #696969;
+  border-top: 1px solid #fe9772;
+  border-bottom: 1px solid #9f593f;
+  font-size: 24px;
+  letter-spacing: .05em;
+  list-style-type: none;
+  text-align: left;
+  height: 50px;
+  padding-left: 1em;
+  padding-top: 10px;}
+
+  form {
+  padding: 0px 20px 20px 20px;}
+
+label {
+  color: #fff;
+  display: block;
+  margin: 10px 0px 10px 0px;
+  font-size: 24px;}
+
+input[type='text'] {
+  background-color: #999;
+  color: #333;
+  font-size: 24px;
+  width: 96%;
+  padding: 4px 6px;
+  border: 1px solid #999;
+  border-radius: 8px;}
+
+input[type='button'], button {
+  background-color: #cb6868;
+  color: #f3dad1;
+  border-radius: 8px;
+  border: none;
+  padding: 8px 10px;
+  margin-top: 10px;
+  font-family: 'Oswald', 'Futura', sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;}
+
+#newItemButton {padding: 10px 20px 75px 20px; display: none;}
+#newItemForm {padding-top: 20px;}
+#itemDescription {width: 360px;}
+#newItemForm input[type='submit'] {margin-top: 0px; text-align: left;}
+#page {
+    max-width: 480px;
+    margin: 20px auto 20px auto;
+  }
+
+/* Click event example - note style */
+#note{
+  color: #fff;
+background-color: #000;
+opacity: 0.9;
+box-shadow: -3px 3px 6px #000;
+padding: 1em 1em 2em 1em;
+height: 95%;
+width: 95%;
+position: absolute;
+top: 1em;
+left: 0;}
+
+#note .header + div {
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 1);
+  position: relative;
+  text-align: center;
+  top:100px;
+  color: #d7666b;
+  padding: 20px;
+  /* margin: 120px; */
+  margin-left: 325px;
+  border-radius: 15px 0px 15px 15px;
+  box-sizing: border-box;
+  width: 50%;
+  height: 30%;
+}
+#note h2 {
+  color: #d7666b;
+  padding-top: 20px;
+  padding-bottom: 20px;}
+
+  #note a {
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    font-size: 40px;
+    font-weight:bold;
+    color: red;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 310px;
+    top: 70px;
+    text-align: center;
+
+  }
+  #note a:hover{
+
+background-color: #000;
+border: 2px solid red;
+  }
+  #note .header {
+    /* text-align:right; */
+    background-color: #000;
+    border: none;
+    padding: 0 0 0 10px;}
+
+    .shown {
+  visibility: visible;}
+  .hidden {
+    visibility: hidden;}

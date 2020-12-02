@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document Object Model - Get Elements</title>
+
+</head>
+<body>
+  <div id="page">
+    <h1 id="header">List King</h1>
+    <h2>Buy groceries</h2>
+    <ul>
+      <li id="one" class="hot">fresh figs</li>
+      <li id="two" class="hot">pine nuts</li>
+      <li id="three" class="hot">honey</li>
+      <li id="four" class="cool">balsamic vinegar</li></ul>
+    </div>
+    <button id="myFunction">Try it</button>
+    <p id="demo"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+      function myFunction(){
+        $("li").text("Apple"); //thise example replace the content of each list item
+        // $("li").hide().fadeIn(2000);//this line hide elements and fade them for 2000 mc
+        $('li[id!="one"]').hide().delay(1500).fadeIn(1500);
+
+        // var item = $("li").html();
+        // document.getElementById("demo").innerHTML = item; //this example gets content the first list item
+
+      }
+
+      var replace = document.getElementById("myFunction");
+      replace.addEventListener("click",myFunction,false);
+    </script>
+
+  </body>
+  </html>

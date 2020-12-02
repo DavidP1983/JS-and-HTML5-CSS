@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="css2/style2.css">
+  <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+  <title>Reservation Request</title>
+
+</head>
+<body onload="myFunction()">
+
+  <div id="loading">
+    <div id="loader"></div>
+    <p>Loding...</p>
+  </div>
+
+  <main id="myMain" class="animate-bottom">
+    <h3>Thank you for your request!</h3>
+    <p>We will contact you within the next 24 hours.</p>
+  </main>
+
+  <form id="ratingForm">
+    <fieldset class="rating" id="rat-ing">
+      <legend>Please rate</legend>
+      <input type="radio" id="star5" name="rating" value="5"/><label for="star5" title="Excellent">5</label>
+      <input type="radio" id="star4" name="rating" value="4"/><label for="star4" title="Good">4</label>
+      <input type="radio" id="star3" name="rating" value="3"/><label for="star3" title="Not bad">3</label>
+      <input type="radio" id="star2" name="rating" value="2"/><label for="star2" title="Bad">2</label>
+      <input type="radio" id="star1" name="rating" value="1"/><label for="star1" title="Have to work more">1</label>
+    </fieldset>
+  </form><br>
+
+  <div class="box">
+    <textarea id="rate" class="text" name="comment" rows="8" cols="40" placeholder="your comment"></textarea>
+  </div>
+
+  <div class="buttons" id="button">
+    <button type="button" class="draw" id="commit" name="button" onclick="Print();">Commit</button>&nbsp;&nbsp;&nbsp;
+    <button type="button" class="draw" id="reset" name="button">Reset</button>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">ok</span>
+      <p>Thank you for Your feedback</p>
+    </div>
+  </div>
+
+  <div id="Modal" class="modal2">
+    <div class="modal-content2">
+      <span class="close2">NO</span>
+      <span class="close3">YES</span>
+      <p>Do you want to delete your comment ?</p>
+    </div>
+  </div>
+
+  <div id="tex"></div><br>
+  <h1><u class="comment">Comments<u></h1>
+
+    <i id="arme" style="font-size:24px" class="fa">&#xf0a4;</i>
+    <div id="hide">
+      <button type="button" id="home" class="slide" style="font-size:12px">Home <i class="fa fa-home"></i></button>
+      <div class="box2"><div class="box-inner"><a href="exe1.html">Back home</a></div>
+    </div>
+  </div>
+
+
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="page2/jsPage2.js"></script>
+</body>
+</html>

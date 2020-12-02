@@ -1,0 +1,105 @@
+<html>
+<head>
+  <title>JavaScript</title>
+  <link rel="stylesheet" href="myCSS.css" />
+</head>
+<body>
+  <div id="page">
+
+    <form id="newItemForm">
+      <input type="text" id="itemDescription" placeholder="Add description" />
+      <input type="button" id="add" value="add" />
+
+    </form>
+    <h1 id="header">Movies</h1>
+    <h2>Movies</h2>
+
+    <ul>
+      <li class="liItem" id="one" >Mad Max</li>
+      <li class="liItem" id="two">Fugitive</li>
+    </ul>
+
+    <p> hello</p>
+  </div>
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script>
+  $(function(){
+    var msg = '<div class=\"header\"><a id=\"close\" href="#" title="close">X</a></div>';
+    msg+='<div><h2>System Maintenance</h2>';
+    msg+='<br>Due to the current climate surrounding the Covid-19 outbreak,<br><br>';
+    msg+='the retail store has closed but the online store is still open 24/7 :)</div>';
+
+    var elNote = document.createElement('div');
+    elNote.setAttribute('id','note');
+    elNote.innerHTML = msg;
+    document.body.appendChild(elNote);
+
+function dismissNote(){
+  document.body.removeChild(elNote);
+    $('#itemDescription').focus();
+}
+
+    var elClose = document.getElementById('close');
+    elClose.addEventListener('click',dismissNote,false);
+
+
+    $("p").after('<p class="notice">David Piruzashvili</p>');
+    $("#add").on("click",function(){
+      var item = $("#itemDescription").val();
+      if(item==null || item=="" ){
+        alert("enter the value");
+      }else{
+        let $newItem =$('<li id="">'+item+'</li>');
+        // console.log($newItem);
+        $("li:last").after($newItem);
+        $($newItem).attr("id",`${item}`);
+        $($newItem).attr("class","liItem");
+        // console.log($newItem);
+        $("#itemDescription").val("");
+      }
+
+    });
+    $(document).on("mouseover",".liItem",function(){
+
+      var ids = this.id;
+      // console.log("ids",ids);
+      $(this).css({
+        "padding-left":"80px",
+        "font-size": "+=1em"
+      });
+    });
+
+    $(document).on("mouseout",".liItem",function(){
+      $(this).css({
+        "padding-left": "1em",
+        "font-size": "24px"
+      });
+    });
+
+
+    function remove(event){
+      var target = event.target||event.srcElement;
+      if(target.nodeName.toLowerCase()=="li"){
+        var child = document.getElementsByTagName("li");
+
+        var el_Li = target;
+        var el_Ul = el_Li.parentNode;
+        if(child.length>1){
+          el_Ul.removeChild(el_Li);}
+
+        }
+      }
+
+      var removeEl = document.getElementsByTagName("ul")[0];
+      removeEl.addEventListener("click",function(event){
+        remove(event);
+      });
+
+    });
+
+
+
+
+    </script>
+  </body>
+  </html>

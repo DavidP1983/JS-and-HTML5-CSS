@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href='dist/css/animsition.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <title>Form validation</title>
+</head>
+<body>
+  <div
+  class="animsition"
+  data-animsition-in-class="flip-in-y"
+  data-animsition-in-duration="2500"
+  data-animsition-out-class="flip-out-y"
+  data-animsition-out-duration="800"
+>
+
+  <div id="scroll" class="scroll">
+    <div id="page">
+      <img src="images/logo.png" alt="hilton">
+    </div>
+    <nav class="icon-bar">
+      <a class="active" href="https://www.hilton.com/en/hotels/yuldnes-embassy-suites-montreal/" target="_blank"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="https://www.google.com" target="_blank"><i class="fa fa-fw fa-search"></i> Search</a>
+
+      <div id="dropContact" class="tablinks"><a  href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <div id="contact" class="tabContact">
+          <address>
+            <h1>Hilton</h1>
+            450 Abelard, Unit #2D <br>
+            Montreal, QC <br>
+            H3E 1B5 <br>
+            Canada <br><br>
+            <strong>Phone: </strong>514.627.3924 <br>
+            <strong>Email: </strong><u>David.Piruzashvili@gmail.com</u> <br>
+          </address>
+        </div>
+      </div>
+      <a href="https://www.google.ca/maps/place/Embassy+Suites+by+Hilton/@45.4624971,-73.5971052,12z/data=!4m11!1m2!2m1!1shilton!3m7!1s0x4cc91a5a08d43ae1:0x5fa27da4503254c1!5m2!4m1!1i2!8m2!3d45.5042664!4d-73.5593162" target="_blank"><i class="fa fa-globe"></i></a>
+
+      <div class="container" id="menu">
+        <button class="dropbtn" id="button">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div></button>
+        </div>
+
+        <div id="myDropdown" class="dropdown-content">
+          <input type="search" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="#tz" id="TZ">Time zone</a>
+
+          <div class="slide">
+            <a href="#forms" class="slidedown">Forms
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="content">
+              <a href="#link1">Reservation Request</a>
+              <a href="#section1" onclick="myFunction()" id="s">Member Form</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+     <div class="time" id="txt"></div>
+
+      <h1>Reservation Request</h1>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+
+
+      <form id="info" name="info" action="index.html" method="get" target="_blank">
+        <fieldset id="one">
+          <legend>General Information</legend>
+          <label for="date">Arrival date:</label>
+          <input type="date" id="date" name="Arrival Date" value="" autofocus>
+          <span>*</span><br>
+          <label for="night">Nights:</label>
+          <input type="text" id="night" name="Night" value="">
+          <span>*</span><br>
+
+          <label for="adult_num">Adults:</label>
+          <select id="adult_num" class="adult" name="Adult">
+            <option value="" selected></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select><br>
+
+
+          <label for="child_num">Children:</label>
+          <select id="child_num" class="child" name="Child">
+            <option value="0" selected>0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select><br>
+
+          <label for="age">Age:</label>
+          <input type="button" id="plus" value="+" />
+          <input type="text" id="age" name="Age" min="0" max="18" step="1" value="0" size="2"/>
+          <input type="button" id="minus" value="-" />
+
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences</legend>
+          <label for="room">Room type:</label>
+          <select id="room" name="Room Type">
+            <option value=""selected></option>
+            <option value="standard">Standard</option>
+            <option value="business">Business</option>
+            <option value="suite">Suite</option>
+          </select><br><br>
+          <div class="dropimg">
+            <img id="standard" src="images/standart.jpg" alt="standart" width="152" height="100">
+            <div class="dropimg-content">
+              <img src="images/standart.jpg" alt="standart" width="500" height="400">
+              <div class="desc">Standard</div>
+            </div>
+          </div>
+          <label for="bed">Bed type:</label>
+          <input type="radio" name="Bed Type" id="king" class="left" value="King">King&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="Bed Type" id="double" class="left last" value="Double">Double Double<br>
+          <br>
+          <input type="checkbox" name="Smoking" id="smoking" class="left" value="Smoking">Smoking&nbsp;&nbsp;&nbsp;
+          <input type="checkbox" name="No_smoking" id="no_smoking" class="left last" value="No Smoking">No smoking<br>
+          <br><br>
+          <label>Message:</label><br>
+          <textarea id='subject' name="Comment" placeholder="Write your comment..." style="height:100px" maxlength="180"></textarea>
+          <div id="charactersLeft">0 / 180</div>
+        </fieldset>
+        <fieldset>
+          <legend>Contact Information</legend>
+          <label for="name">Name</label>
+          <input type="text" name="Name" id="name" required autofocus>
+          <span>*</span><br>
+          <label for="email">Email</label>
+          <input type="email" name="Email" id="email" required autocomplete="off">
+          <span>*</span><br>
+          <label for="phone">Phone</label>
+          <input type="tel" name="Phone" id="phone" required  title="Must be 999-999-9999" placeholder="999-999-9999">
+          <!-- pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" -->
+          <span>*</span><br>
+          <br>
+          <label for="gender">Gender:</label>
+          <input type="radio" name="Gender" id="gender" class="left" value="Male">Male&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="Gender" id="gender" class="left last" value="Female">Female<br>
+          <br><br>
+          <label for="language">Language:</label>
+          <label class="rad">
+            <input type="radio"  name="Language" id="language" class="left" value="English">English&nbsp;
+            <span class="checkmark"></span>
+          </label>
+          <label class="rad">
+            <input type="radio" name="Language" id="language" class="left last" value="French">French<br>
+            <span class="checkmark"></span>
+          </label>
+        </fieldset>
+
+        <canvas id="myCanvas" width="150" height="50"></canvas>
+        <button type="button" id="review">Review</button>
+        <section class="drop-content" id="pre_reading">
+          <h2>Your Order</h2>
+          <section>
+            <select id="order" name="order" size="20"></select>
+            <!-- <input type="checkbox" name="agree" id="agree" class="check"> -->
+          </section>
+          <input type="checkbox" name="agree" id="agree" class="check" value="check">
+          <section id="buttons">
+            <input type="submit" name="submit" id="submit" value="Submit">
+            <input type="reset" name="reset" id="reset" value="Reset">
+          </section>
+        </section>
+
+
+      </form>
+      <!-- <input type="checkbox" name="agree" id="agree" class="check"> -->
+      <div id="section1">
+        <p>Member Form</p>
+      </div>
+
+      <section class="m_f" id="mf">
+        <a href="#m" class="form_slide">Member Form</a>
+        <div class="arrow_up">&#10095;</div>
+      </section>
+
+      <form class="member_drop" id="info1" name="member_form" action="index.html" method="get" target="_blank">
+        <h3>Membership Form</h3>
+        <fieldset>
+          <legend>Registration Information</legend>
+          <label for="email_1">Email Address</label>
+          <div class="input-container">
+            <i class="fa fa-envelope icon"></i>
+            <input type="email" name="email" id="email_1" title="Must be character@character.com" placeholder="Email" class="input-field">
+            <span>*</span><br>
+          </div>
+          <label for="password">Password</label>
+          <div class="input-container">
+            <i class='fas fa-lock icon'></i>
+            <input type="password" name="password" id="password" placeholder="Password" class="input-field">
+            <span>*</span><br>
+          </div>
+          <label for="verify">Verify Password</label>
+          <div class="input-container">
+            <i class="fas fa-lock-open icon"></i>
+            <input type="password" name="verify" id="verify" placeholder="Password" class="input-field">
+            <span>*</span><br>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Member Information</legend>
+          <label>Membership Type</label>
+          <label class="rad">
+            <input type="radio" name="type" id="individual" value="individual"  checked class="left">Individual
+            <span class="checkmark"></span>
+          </label>
+          <label class="rad">
+            <input type="radio" name="type" id="corporate" value="corporate" class="left last">Corporate<br>
+            <span class="checkmark"></span>
+          </label>
+          <br>
+          <br>
+          <label for="company_name">Company Name</label>
+          <div class="input-container">
+            <i class="fas fa-business-time icon"></i>
+            <input type="text" name="company_name" id="company_name" disabled class="input-field">
+            <span></span><br>
+          </div>
+          <label for="fn">Frist Name</label>
+          <div class="input-container">
+            <i class="fa fa-user icon"></i>
+            <input type="text" name="fn" id="fn" class="input-field">
+          </div>
+          <br>
+
+          <label for="ln">Last Name</label>
+          <div class="input-container">
+            <i class="fa fa-user icon"></i>
+            <input type="text" name="ln" id="ln" class="input-field">
+          </div>
+          <br>
+
+          <label for="ph">Phone Number</label>
+          <div class="input-container">
+            <i class="fas fa-phone icon"></i>
+            <input type="tel" name="pn" id="pn" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Must be 999-999-9999" placeholder="999-999-9999" class="input-field">
+            <span>*</span><br>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn">Register</button>
+      </form>
+</div>
+
+      <div id="chat">
+        <i class="fas comment">&#xf086;</i>
+        <div id="arrow1" class="arrow_hide">
+          <p>Click chat above for more info</p>
+          <i class="fas arrow">&#xf077;</i>
+        </div>
+      </div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h3>Customer support</h3>
+          </div>
+          <div class="modal-body">
+            <p>We are open 24/7</p>
+            <p>Call us for more information</p>
+          </div>
+          <div class="modal-footer">
+            <h3>Have a nice day</h3>
+          </div>
+        </div>
+      </div>
+
+
+    <footer id="footer" class="foot">
+      <ul>
+        <li><i class="fab facebook">&#xf09a;</i></li>
+        <li><i class="fab messenger">&#xf39f;</i> |</li>
+        <li><i class="fab viber">&#xf409;</i> |</li>
+        <li><i class="fab github">&#xf09b;</i> |</li>
+      </ul>
+    </footer>
+</div>
+
+    <div   class="nav_up" id="nav_up">&#8679;</div>
+    <div   class="nav_down" id="nav_down">&#8681;</div>
+
+
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="dist/js/animsition.js"></script>
+    <script src="page1/jsPage1.js"></script>
+
+  </body>
+  </html>

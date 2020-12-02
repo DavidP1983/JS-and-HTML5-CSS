@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Toggle</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <center>
+    <main id="page">
+      <h1>Fishing Images</h1>
+      <p>Click on an image to enlarge.</p>
+      <div id="flex">
+        <div><a href="images/bison.jpg" title="Grazing Bison">
+          <img src="images/bison.jpg" alt="Grazing Bison"></a></div>
+        <div><a href="images/deer.jpg" title="Deer at Play">
+          <img src="images/deer.jpg" alt="Deer at Play"></a></div>
+        <div><a href="images/hero.jpg" title="The Big One!">
+          <img src="images/hero.jpg" alt="The Big One!"></a></div>
+      </div>
+      <h2 id="demo"></h2>
+      <p><img id="demo1" src="" alt=""></p>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#flex a").click(function(event){
+          var link = $(this).attr("href");
+          var elimg = $("#demo1").attr("src", link);
+          // elimg.style.width = "600px";
+
+          var elTitel = $(this).attr("title");
+          var el = $("#demo").text(elTitel);
+          // el.style.color = "blue";
+
+  event.preventDefault();
+
+        });
+      });
+
+    </script>
+  </center>
+</body>
+</html>

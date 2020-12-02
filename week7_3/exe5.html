@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Join Email List</title>
+  <link rel="stylesheet" href="css/email_list.css">
+</head>
+<body>
+  <main>
+    <h1>Please join our email list</h1>
+
+    <form id="email_form" name="email_form" action="join.html" method="get">
+      <label for="email_address1">Email Address:</label>
+      <input type="text" id="email_address1" name="email_address1">
+      <span>*</span><br>
+
+      <label for="email_address2">Re-enter Email Address:</label>
+      <input type="text" id="email_address2" name="email_address2">
+      <span>*</span><br>
+
+      <label for="first_name">First Name</label>
+      <input type="text" id="first_name" name="first_name">
+      <span>*</span><br>
+
+      <label>&nbsp;</label>
+      <input type="button" id="join_list" value="Join our List">
+    </form>
+
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#join_list").on("click",function(){
+      var email1 = $("#email_address1").val();
+      var email2 = $("#email_address2").val();
+      var firstName = $("#first_name").val();
+      var isValid = true;
+      //validate the first email address
+if(email1===""){
+  $("#email_address1").next().text("This field is required");
+  isValid = false;
+}else{
+  $("#email_address1").next().text("");
+}
+// validate the second email address
+if(email2===""){
+  $("#email_address2").next().text("This field is required");
+  isValid = false;
+}else if(email1 !== email2){
+  $("#email_address2").next().text("This entry must equal first entry");
+  isValid = false;
+}else{
+  $("#email_address2").next().text("");
+}
+// validate the first name entry
+if(firstName===""){
+  $("#first_name").next().text("This field is required");
+  isValid = false;
+}else{
+$("#first_name").next().text("");
+}
+// submit the form if all entries are valid
+if(isValid){
+  $("#email_form").submit();
+}
+
+  });   // end click
+  $("#email_address1").focus();
+    });  // end ready
+
+  </script>
+
+</body>
+</html>

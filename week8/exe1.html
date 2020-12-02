@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Vecta Corp.</title>
+    <link href="main.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header></header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>The Vecta Corp. Management Team</h2>
+
+		<div id="team"></div>
+    </main>
+
+    <footer></footer>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET','team.xml',true);
+      xhr.send();
+
+      xhr.onload = function(){
+        if(xhr.status===200){
+          var response = xhr.responseXML;
+          var events = response.getElementsByTagName("teammember");
+          for(var i = 0; i<events.length; i++){
+            $("#team").append("<h3>"+ getNodeValue(events[i],'name')+"</h3>"+
+                                      getNodeValue(events[i],'title')+"<br>"+
+                                      getNodeValue(events[i],'bio')+"<br>");
+          }
+        }
+      }
+function getNodeValue(obj,tag){
+  return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
+}
+    </script>
+</body>
+</html>
